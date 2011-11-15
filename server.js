@@ -7,11 +7,12 @@ var connect = require('connect')
 
 connect(
   function (req, res, next) {
+    console.error(req.method, req.url)
     if(req.method == 'GET')
       return indexer(req, res, next)
     next()
   },
-  connect.static(__dirname + '/results'),
+  connect.static(__dirname + '/results', {maxAge: 0}),
   function (req, res) {
     if(req.method != 'POST') {
       res.writeHead(400)
@@ -24,4 +25,6 @@ connect(
       res.end('OK')
     })
   }
-).listen(8642)
+).listen(80, function () {
+  console.error('listening on port:', 80)
+})

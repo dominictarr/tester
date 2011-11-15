@@ -2,7 +2,7 @@
   "author": "Dominic Tarr <dominic.tarr@nodejitsu.com>",
   "name": "tester",
   "description": "a very rudimentary CI server",
-  "version": "0.0.0-1",
+  "version": "0.0.0-3",
   "repository": {
     "url": ""
   },
