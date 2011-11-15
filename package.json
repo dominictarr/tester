@@ -1,0 +1,22 @@
+{
+  "author": "Dominic Tarr <dominic.tarr@nodejitsu.com>",
+  "name": "tester",
+  "description": "a very rudimentary CI server",
+  "version": "0.0.0-1",
+  "repository": {
+    "url": ""
+  },
+  "main": "server.js",
+  "engines": {
+    "node": "*"
+  },
+  "scripts": {
+    "start": "./server.js"
+  },
+  "dependencies": {
+    "connect": "1.7.3",
+    "connect-index": "0.0.1"
+  },
+  "devDependencies": {},
+  "subdomain": "tester"
+}
