@@ -1,0 +1,27 @@
+#! /usr/bin/env bash
+
+pkg=$1
+TEST=$2
+testdir=$3
+dir=`pwd`
+
+#
+# run post test scripts.
+#
+# npm has it's own posttest script, which is useful for tearing down after the test.
+# this is intended for things that may not be apropiate to put in a distributable package,
+# but are okay to put on your CI server.
+#
+
+pass="$dir/posttest/$pkg/pass"
+fail="$dir/posttest/$pkg/fail"
+
+#test -e "$testdir" || cd "$testdir"
+
+if [[ "$TEST" == "0" && ( -e "$pass" ) ]] ; then
+  echo 'running "pass" post test script' >&2
+  "$dir"/posttest/$pkg/pass
+elif [[ "$TEST" != "0"  && ( -e "$fail" ) ]] ; then
+  echo 'running "fail" post test script' >&2
+  "$dir"/posttest/$pkg/fail
+fi

@@ -1,0 +1,9 @@
+#! /usr/bin/env bash
+
+echo -----------------------------------
+echo TEST PASSED TEST PASSED TEST PASSED
+echo -----------------------------------
+echo 
+echo '         JSON.sh passed'
+echo 
+echo -----------------------------------
